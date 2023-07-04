@@ -94,7 +94,7 @@ def read_csv_file(file_path):
             ioc.append(temp)
     return ioc
 
-strConfig_File_Path = os.getcwd() + "/config.cfg"
+strConfig_File_Path = "" #path for config file. config contain misp url and misp access key 
 dictConfig = Get_Config(strConfig_File_Path)
 misp = MISP(dictConfig["misp_url"], dictConfig["misp_key"])
 event_obj = create_event_obj("test_event",  ["type:OSINT","OTX Vault", "tlp:green"])
